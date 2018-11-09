@@ -1,0 +1,6 @@
+{
+  "gpServiceUrl": "https://gisportal03.logicsolutionsgroup.com/arcgis/rest/services/XOM_demo/MapStatesNew/GPServer/Map%20States",
+  "exportWebMapUrl": "https://gisportal03.logicsolutionsgroup.com/arcgis/rest/services/XOM_demo/ExportWebMap/GPServer/Export%20Web%20Map",
+  "thumbnailImagePathUrl": "https://gisportal03.logicsolutionsgroup.com/AdvancedSaveImages/",
+  "sortByOptions": "date,name,owner"
+}

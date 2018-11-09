@@ -1,0 +1,205 @@
+@import url("../common.css");
+
+.jimu-widget-mapstate{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.jimu-widget-mapstate .jimu-state-error{
+  margin-top: 4px;
+  visibility: hidden;
+}
+.jimu-widget-mapstate .jimu-btn{
+  float: none;
+  margin: auto;
+  width: 100%;
+}
+.jimu-widget-ulpreferences{
+  list-style-type: none;
+  padding-left: 30px;
+}
+.jimu-widget-lipreferences{
+	list-style-type: none;
+  font-size: 14px;
+}
+.jimu-widget-chkpreferences{
+  width:15px;
+  height:15px;
+  margin-left: 0px;
+  margin-right: 5px;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+.jimu-widget-img{
+  width: 15px;
+  height: 12px; 
+  vertical-align: middle;
+}
+.jimu-widget-combobox{
+	margin-bottom: 15px;
+}
+.jimu-widget-mapstatelabel{
+  margin-top: 10px;
+  font-size: 14px;
+}
+#advancedsettingchkdiv{
+  border: 1px solid #cccccc;
+  margin-top:5px;
+  height: 60px;
+}
+#sharetocontentdiv{
+  border: 1px solid #cccccc;
+  margin-top:5px;
+  padding: 4px;
+  height: 100%;
+}
+#advancedleft{
+  width: 50%;
+  float: left;
+}
+#advancedright{
+  width: 50%;
+  float: right;
+}
+#groupdiv{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#individualdiv{
+  margin-top: 5px;
+}
+#saveBtnDiv{
+  text-align: center;
+  margin-top: 5px;
+}
+#groupIndivDiv{
+  display: none;
+}
+.dojoxCheckedMultiSelectButton{
+  width: 100%;
+  height: 30px; 
+  font-size: 14px; 
+}
+/*.myDynamicButton { 
+  background-color: grey; 
+  width: 100%;
+  height: 30px;
+  border: 0px;
+}*/ 
+#andorDiv{
+  text-align: center;
+}
+#closeImgBtnLoad{
+  text-align: right;
+  margin-bottom: 50px;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+.closeImgBtn{
+  margin-bottom: 10px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.project-preference-thumbnail{
+  float: left;
+}
+.project-preference-thumbnail-image{
+  width:100px;
+  height:100px;
+  cursor: pointer;
+}
+.project-preference-thumbnail-image:hover{
+  border:1px solid deepskyblue;
+}
+.project-preference-thumbnail-text{
+  float: left;
+}
+.project-preference-thumbnail-image-text{
+  clear: both;
+  padding-top: 10px;
+}
+.mstates-row{
+  margin-bottom:10px;
+}
+.mstates-btn{
+  width:49%;
+  height:30px;
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  background-color: #e6e6e6;
+  border:1px solid #C0C0C0;
+  display:inline-block;
+  box-shadow: 1px 1px 0px #A0A0A0;
+  cursor :pointer;
+  padding: 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+.mstates-btn:hover{
+  background-color: #DDDDDD;
+}
+#tcDiv{
+  margin-top: 5px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 620px;
+  height: 400px;
+}
+/*#orgTabDiv{
+  overflow-x: hidden;
+  height: 350px;
+}*/
+#sharedTabDiv{
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 620px;
+  height: 360px;
+}
+#myTabDiv{
+  overflow-x: auto;
+  overflow-y: auto;
+  width: 620px;
+  height: 360px;
+}
+#tcDiv li {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-top: 2px;
+}
+#tcDiv ul {
+  list-style-type: none;
+  padding-left: 5px;
+}
+#saveBtnDiv {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.project-preference-filter-label {
+  margin-right: 5px; 
+}
+.project-preference-filter-input {
+}
+.project-preference-sortBy-label {
+  margin-left: 20px; 
+  margin-right: 5px; 
+}
+.project-preference-sortBy-select {
+}
+.project-preference-filter-sort-apply-button {
+  cursor: pointer;
+  vertical-align: bottom;
+  margin-left: 20px; 
+  margin-right: 10px;   
+}
+.project-preference-sort-order-img {
+  width: 20px; /*or your image's width*/
+  height: 20px; /*or your image's height*/
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom; 
+}

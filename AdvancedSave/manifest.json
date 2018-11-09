@@ -1,0 +1,15 @@
+{
+  "name": "AdvancedSave",
+  "2D": true,
+  "3D": false,  
+  "platform": "HTML",
+  "version": "2.0.1",
+  "wabVersion": "2.0.1",
+  "author": "LOGIC Solutions Group",
+  "description": "the Mapstate widget saves and loads a map state (map extent, layer visibility/transparency, graphics and layer definitions)",
+  "copyright": "LOGIC Solutions Group",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "supportMultiInstance": false
+  }  
+}

@@ -1,0 +1,23 @@
+<div>
+    <div class="jimu-widget-combobox" data-dojo-attach-point="preferenceComboBox"></div>
+
+	<div>
+		<div class="mstates-row">
+			<div class="mstates-btn" data-dojo-attach-point="btnLoadDialog" data-dojo-attach-event="onclick:_onLoadDialogBtnClicked">
+				<span>${nls.labelLoad}</span>
+				<img class="jimu-widget-img" src="./widgets/AdvancedSave/images/arrowheaddown.png">
+			</div>
+			<div class="mstates-btn" data-dojo-attach-point="btnSaveDialog" data-dojo-attach-event="onclick:_onSaveDialogBtnClicked">
+				<span>${nls.labelSave}</span>
+				<img class="jimu-widget-img" src="./widgets/AdvancedSave/images/arrowheaddown.png">
+			</div>
+		</div>
+		<div class="mstates-row">
+			<div class="mstates-btn" data-dojo-attach-point="btnRestore" data-dojo-attach-event="onclick:_onRestoreBtnClicked">${nls.labelRestore}</div>
+		</div>
+	</div>
+
+	<div class="jimu-state-error" data-dojo-attach-point="errorNode">&nbsp;</div>
+	<div class="mapstate-msg" style="display: none;" data-dojo-attach-point="mapstateMsgNode"></div>
+	<div data-dojo-attach-point="shelter" data-dojo-type="jimu/dijit/LoadingShelter" data-dojo-props='hidden:true'></div>
+</div>

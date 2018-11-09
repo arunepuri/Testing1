@@ -1,0 +1,25 @@
+.jimu-widget-mapState-setting .store-strategy-select{
+  width:50px;
+  height:18px;
+  line-height:18px;
+}
+
+.jimu-widget-mapState-setting .store-service-input{
+  width: 200px;
+}
+
+.jimu-widget-mapState-setting .store-service-input.jimu-state-disabled{
+  color: #ccc;
+  cursor: default;
+}
+
+.jimu-widget-mapState-setting .store-strategy-label{
+}
+
+.jimu-widget-mapState-setting .store-service-label{
+}
+
+.jimu-widget-mapState-setting .tip{
+  color: #596679;
+  font-size: 14px;
+}
