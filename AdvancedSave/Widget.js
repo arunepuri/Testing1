@@ -1466,13 +1466,13 @@ define([
                     if (removeLayer) {
                         map.removeLayer(map.getLayer(rLayers[i]));
                         removeLayer = null;
-                    };
+                    }
                 }
 
                 var dynamicData = stateData.dynamicData;
                 var layerObjects = array.map(this.layerInfosObj.getLayerInfoArray(), function (layer) {
                     return layer.layerObject.url;
-                })
+                });
                 this.requestGroup = [];
                 this.dynamicData_List = [];
                 for (var key in dynamicData) {
@@ -1488,7 +1488,9 @@ define([
                                 });
                                 map.addLayer(dynamicLayer);
                                 dynamicLayer.on('load', lang.hitch(this, function () {
-                                    this._applyPopupforExternalLayers(dynamicData);
+                                    setTimeout(lang.hitch(this, function () {
+                                        this._applyPopupforExternalLayers(dynamicData);
+                                    }), 2000);
                                 }));
                             }
                             else if (dynamicData[key].type == 'ArcGISTiledMapServiceLayer') {
@@ -1538,7 +1540,11 @@ define([
                                 });
                                 map.addLayer(fLayer);
                                 fLayer.on('load', lang.hitch(this, function () {
-                                    this._applyPopupforExternalLayers(dynamicData);                                   
+                                    setTimeout(lang.hitch(this, function () {
+                                        this._applyPopupforExternalLayers(dynamicData);
+                                    }), 2000);
+
+                                    
                                 }));
                             }
                             else {
@@ -1549,34 +1555,8 @@ define([
                 }//For loop
                 // to enable or disable popup from json
                 this._applyPopupforInternalLayers(layerData);
-                /*
-                if (this.layerInfosObj && this.layerInfosObj.traversal) {
-                    this.layerInfosObj.traversal(lang.hitch(this, function (layerInfo) {
-                        if (layerData[layerInfo.id]) {
-                            if (layerData[layerInfo.id].enablePopup !== undefined) {
-                                if (layerData[layerInfo.id].enablePopup) {
-                                    //layerInfo.controlPopupInfo.enablePopup = true;
-                                    var featureLayerInfo = this.layerInfosObj.getLayerInfoById(layerInfo.id);
-                                    featureLayerInfo.loadInfoTemplate().then(lang.hitch(this, function () {
-                                        featureLayerInfo.enablePopup();
-                                    }));
-                                }
-                                else {
-                                    var featureLayerInfo1 = this.layerInfosObj.getLayerInfoById(layerInfo.id);
-                                    featureLayerInfo1.loadInfoTemplate().then(lang.hitch(this, function () {
-                                        featureLayerInfo1.disablePopup();
-                                    }));
-                                }
-                            }                            
-                        }
-                    }));
-                }
-                */
-               
-
             }
         },
-
             _applyPopupforExternalLayers: function (dynamicData) {
 
                 LayerInfos.getInstance(this.map, this.map.itemInfo).then(function (layerInfosObj) {
@@ -1593,16 +1573,20 @@ define([
                                   if (layerInfo.layerObject.url.indexOf(dynamicData[key].url) > -1) {
                                       dynamicKey = key;
                                       if (layerInfo.id.indexOf("_" > -1)) {
-                                          subKey = layerInfo.id.split("_")[1];
-                                      }
+
+                                          if (layerInfo.id.split("_").length > 1) {
+                                              subKey=layerInfo.id.substr(layerInfo.id.indexOf("_")+1);
+                                          }
+                                          else {
+                                              subKey = layerInfo.id.split("_")[1];
+                                          }                                          
+                                      }                                      
                                       dynamicKey = dynamicKey.split("_")[0] + "_" + subKey;
                                       break;
                                   }
                               }
                           }
                           if (dynamicData[dynamicKey] != undefined) {
-                              //layerInfo.visible = dynamicData[layerInfo.id].visible;
-                              //layerInfo.setOpacity(dynamicData[layerInfo.id].opacity);
                               if (dynamicData[dynamicKey].enablePopup !== undefined) {
                                   if (dynamicData[dynamicKey].enablePopup) {
                                       layerInfo.enablePopup();
@@ -1610,19 +1594,11 @@ define([
                                   else {
                                       layerInfo.disablePopup();
                                   }
-                              }
-                              //layerInfo.layerObject.setDefinitionExpression(dynamicData[layerInfo.id].layerDefinitions);
-
+                              }                              
                           }                            
                         }
                         else {
                           var t = 'T';
-
-                          ////  if (this.getLayerTypes_id.indexOf(layerInfo.id) < 0) {
-                          ////      this.getLayerTypes.push(layerInfo.getLayerType());
-                          ////      this.getLayerTypes_id.push(layerInfo.id);
-                          ////}
-
                           for (var key in dynamicData) {
                               if (dynamicData[key].url != undefined) {
                                   if (layerInfo.layerObject.url == dynamicData[key].url) {
@@ -1632,9 +1608,7 @@ define([
                               }
                           }
                           
-                          if (dynamicData[dynamicKey] != undefined) {
-                              //layerInfo.visible = dynamicData[layerInfo.id].visible;
-                              //layerInfo.setOpacity(dynamicData[layerInfo.id].opacity);
+                          if (dynamicData[dynamicKey] != undefined) {                              
                               if (dynamicData[dynamicKey].enablePopup !== undefined) {
                                   if (dynamicData[dynamicKey].enablePopup) {
                                       layerInfo.enablePopup();
@@ -1642,64 +1616,11 @@ define([
                                   else {
                                       layerInfo.disablePopup();
                                   }
-                              }
-                              //layerInfo.layerObject.setDefinitionExpression(dynamicData[layerInfo.id].layerDefinitions);
-
+                              }                              
                           }    
-
-                          /*
-                            mapObj.dynamicData[layerInfo.id] = {
-                                visible: layerInfo.isVisible(),
-                                opacity: layerInfo.getOpacity(),
-                                enablePopup: layerInfo.controlPopupInfo.enablePopup, //*** to enable popup
-                                layerDefinitions: layerInfo.layerObject.layerDefinitions,
-                                url: layerInfo.layerObject.url,
-                                type: layerInfo.originOperLayer.layerType,
-                                title: layerInfo.layerObject.name,
-                                visibleLayers: layerInfo.layerObject.visibleLayers
-                            }
-                            */
                         }
                     }));
                 });
-
-                ////////////////
-/*
-                LayerInfos.getInstance(this.map, this.map.itemInfo).then(lang.hitch(this, function (layerInfos) {
-                    array.forEach(layerInfos._finalLayerInfos, function (info) {
-                        console.log(info.title, info.id);
-                        for (var key in dynamicData) {
-                            if (dynamicData[key].url != undefined) {
-                                if (dynamicData[key].url == info.layerObject.url) {
-                                    if (info.parentLayerInfo != undefined) {
-                                        if (dynamicData[key].enablePopup !== undefined) {
-                                            if (dynamicData[key].enablePopup) {
-                                                info.enablePopup();
-                                            }
-                                            else {
-                                                info.disablePopup();
-                                            }
-                                        }
-                                    }
-                                    else {
-
-                                        if (dynamicData[key].enablePopup !== undefined) {
-                                            if (dynamicData[key].enablePopup) {
-                                                info.enablePopup();
-                                            }
-                                            else {
-                                                info.disablePopup();
-                                            }
-                                        }
-
-                                    }
-                                    
-                                }
-                            }
-                        }
-                    });
-                }));*/
-
             },
             _applyPopupforInternalLayers: function (layerData) {
 

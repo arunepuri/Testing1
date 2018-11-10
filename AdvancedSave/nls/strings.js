@@ -1,8 +1,8 @@
 define({
   root: ({
     labelDelete: "Delete",
-	labelLoad: "Load Map States", 
-	labelSave: "Create Map State", 
+	labelLoad: "Load saved Map", 
+	labelSave: "Create your Map", 
 	labelRestore: "Restore to Default",
 	labelAdvanced: "Advanced",
 	errorNameExist: "Configuration exists!",
@@ -19,7 +19,7 @@ define({
 	indivMultiSelectDefault: 'Select individuals to share',
 	shareToSelectDefault: 'Private',
 	portalUserFilter: 'role: org_user OR role: org_admin OR role: org_publisher',
-	desptTextareaPlaceHolder: 'Type description for new mapstate', 
+	desptTextareaPlaceHolder: 'Type description for new map', 
 	advSettingLabel: 'Advanced Setting:',
 	shareToLabel: 'Share To:',
 	advSettingList: ['extent', 'layers', 'graphicsLayers', 'layerDef'],
@@ -34,8 +34,8 @@ define({
 	sortByLabel: "sort by:", 
 	sortOrderTitle: "sort order", 
 	filterSortApplyButtonLabel: "Apply", 
-	msgOverwriteConfirm: 'You are about to Overwrite the map State.\nPress OK to continue or Cancel to cancel the operation.',
-	msgDeleteConfirm: 'You are about to Delete the map State.\nPress OK to continue or Cancel to cancel the operation.',
+	msgOverwriteConfirm: 'You are about to Overwrite the saved map.\n Press OK to continue or Cancel to cancel the operation.',
+	msgDeleteConfirm: 'You are about to Delete saved map.\n Press OK to continue or Cancel to cancel the operation.',
     _widgetLabel: "Advanced Save"
   })
 });
